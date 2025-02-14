@@ -59,43 +59,43 @@ int draw() {
 }
 
 void main() {
-    int i,arr1[5],arr2[4];
+    int i,j,k;
     char signx= 'X', signo= 'O';
     
     board();
     for (i = 0; i <= 5; i++) {
         printf("Please Enter Number...");
-        scanf(" %d", &arr1[i]);
-        while (arr1[i]<1 || arr1[i]>9 || 
-               boardnum[arr1[i]]=='X' ||
-               boardnum[arr1[i]]=='O') {
+        scanf(" %d", &j);
+        while (j<1 || j>9 || 
+               boardnum[j]=='X' ||
+               boardnum[j]=='O') {
         printf("Invalid Input\n");
         printf("Please Enter Number...");
-        scanf(" %d", &arr1[i]);
+        scanf(" %d", &j);
         }
-        boardnum[arr1[i]]=signx;
+        boardnum[j]=signx;
         board();
         int win1=win();
         if (win1==1) {
-            printf("YOU WIN :)");
+            printf("YOU WIN :)\n\n");
             break;
         } else {
             int draw1=draw();
             if (draw1==1) {
-                printf("DRAW :(");
+                printf("DRAW :(\n\n");
                 break;
             }
         }
         do {
         srand(time(NULL));
-        arr2[i]=rand()%9+1;
-        } while (boardnum[arr2[i]]=='X' ||
-               boardnum[arr2[i]]=='O');
-        boardnum[arr2[i]]=signo;
+        k=rand()%9+1;
+        } while (boardnum[k]=='X' ||
+               boardnum[k]=='O');
+        boardnum[k]=signo;
         board();
         int win2=win();
         if (win2==1) {
-            printf("BOT WIN :(");
+            printf("BOT WIN :(\n\n");
             break;
         }
         
