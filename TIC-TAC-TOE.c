@@ -5,7 +5,7 @@
 
 char boardnum[10]= {'0','1','2','3','4','5','6','7','8','9'};
 void board() {
-    clrscr();
+    system("cls");
     printf("×××××TIC-TAC-TOE××××× \n\n");
     printf("      |      |      \n");
     printf("   %c  |  %c   |  %c  \n",boardnum[1],boardnum[2],boardnum[3]);
